@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Groupe Academic Le Succès">
+    <meta name="author" content="Groupe Academic Le Succès">
+    <title>Groupe Academic Le Succès</title>
+    
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        :root {
+            --primary: #3a86ff;
+            --secondary: #ff006e;
+            --accent: #8338ec;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #06d6a0;
+        }
+        
+        body {
+            font-family: 'Unbounded', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: var(--dark);
+        }
+        
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            transition: all 0.4s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand i {
+            font-size: 1.8rem;
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 600;
+            color: var(--dark);
+            margin: 0 10px;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .navbar-nav .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.3s;
+            border-radius: 3px;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--accent);
+        }
+        
+        .navbar-nav .nav-link:hover:after,
+        .navbar-nav .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .btn-custom {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(58, 134, 255, 0.3);
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(58, 134, 255, 0.4);
+            color: white;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #3a86ff 0%, #8338ec 100%);
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80''') center/cover no-repeat;
+            opacity: 0.1;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-content h6 {
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .stat-box {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            font-weight: 800;
+            color: var(--dark);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .section-title.center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .card-course {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            background: white;
+            height: 100%;
+        }
+        
+        .card-course:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-course .card-header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            font-weight: 700;
+            font-size: 1.4rem;
+            padding: 20px;
+            border: none;
+        }
+        
+        .card-course .card-body {
+            padding: 30px;
+        }
+        
+        .card-course .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 15px 0;
+        }
+        
+        .teacher-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            transition: all 0.3s;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            height: 100%;
+        }
+        
+        .teacher-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .teacher-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 20px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin: 15px;
+            height: 100%;
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(58, 134, 255, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .contact-form {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            height: 100%;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: var(--light);
+            text-decoration: underline;
+        }
+        
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .floating-icon {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        .countdown {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 15px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .countdown-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.2);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .course-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 991px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .navbar-brand span {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+    
+<body>
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.me/2250102400452" class="floating-icon" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+    
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-book me-2"></i>
+                <span>Groupe Academic Le Succès</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-lg-4">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#section_1">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_2">Nos Cours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_3">Enseignants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_4">Témoignages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_5">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="d-lg-block">
+                    <a href="#section_5" class="btn btn-custom">
+                        <i class="bi bi-pencil me-2"></i>Inscription
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Section 1 - Hero -->
+    <section class="hero-section" id="section_1">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                    <div class="hero-content">
+                        <h6 class="animate-on-scroll">La maison des apprenant</h6>
+                        <h1 class="animate-on-scroll">Préparation aux Examens</h1>
+                        <p class="lead mb-4 animate-on-scroll">Les Professionnels des prépas avec 15 ans d'expérience</p>
+                        
+                        <div class="row mt-4 animate-on-scroll">
+                            <div class="col-md-6 mb-4">
+                                <div class="stat-box">
+                                    <h4 class="text-warning">2 mois</h4>
+                                    <p>de formation intensive</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="stat-box">
+                                    <h4 class="text-warning">Document</h4>
+                                    <p>offert</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+           <h>Année scolaire 2024-2025</h1>
+                                <div class="stat-box">
+                                    <h4 class="text-warning">70,3%</h4>
+                                    <p>taux de réussite au BEPC</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="stat-box">
+                                    <h4 class="text-warning">6,11%</h4>
+                                    <p>taux de réussite au BAC</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 animate-on-scroll">
+                            <a href="#section_2" class="btn btn-custom me-3">Voir les cours</a>
+                            <a href="#section_5" class="btn btn-outline-light">S'inscrire</a>
+                        </div>
+                        
+                        <!-- Countdown Timer -->
+                        <div class="countdown mt-4 animate-on-scroll">
+                            <h5 class="text-center mb-3">Rentrée scolaire :</h5>
+                                   <div class="countdown-number" id="seconds">2025</div>
+                                        <small>lundi 8 septembre</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-12">
+                    <div class="text-center animate-on-scroll">
+                        <img src="images/IMG-01.jpg" class="img-fluid rounded-4 shadow-lg" alt="Cours de perfectionnement" style="max-height: 500px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 2 - Nos Cours -->
+    <section class="py-5" id="section_2" style="padding: 100px 0;">
+        <div class="container">
+            <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-center mb-5 animate-on-scroll">
+            <h2 class="section-title center">Nos Cours Disponibles</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 mb-4">
+            <a href="https://drive.google.com/file/d/1JndFQR7lp9QQLPmfRcoxRFmLFeT8EAHr/view?usp=drivesdk" target="_blank" class="btn btn-primary w-100">T-REPBEPC 2025 OFFICIEL pdf</a>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <a href="https://drive.google.com/file/d/1h2gOBzuY7R-DjCZ8C3GWwgB309qkdOrN/view?usp=drivesdk" target="_blank" class="btn btn-primary w-100">T-REPBAC SCIENTIFIQUE 2025 OFFICIEL pdf</a>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <a href="https://drive.google.com/file/d/17JOHRiulVw55gqQp9rrcc1fGvwB-7vDH/view?usp=drivesdk" target="_blank" class="btn btn-primary w-100">T-REPBAC LITTERAIRE 2025 - OFFICIEL pdf</a>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <a href="https://drive.google.com/file/d/1cnNcWjoNCldSUSkC7CAjdfDxJtkwrW4f/view?usp=drivesdk" target="_blank" class="btn btn-primary w-100">CPS - Hist- Geo - Tle A-D 2025 pdf</a>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <a href="https://drive.google.com/file/d/1-ok4Je3jBEDdENYJSk2_vc8kjhjC_5bV/view?usp=drivesdk" target="_blank" class="btn btn-primary w-100">CPS - FRAN - TLE A ET D - 2025 pdf</a>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <a href="https://drive.google.com/file/d/1_1eSjILuID74QAz1nelbxcIoymoGfASJ/view?usp=drivesdk" target="_blank" class="btn btn-primary w-100">COURS INTEGRAL DE PHILOSOPHIE Tle.pdf </a>
+        </div>
+    </div>
+</div>
+                    <p class="lead">Des programmes adaptés à chaque niveau pour garantir votre succès aux examens</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="card-course">
+                        <div class="card-header">3ème</div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <i class="bi bi-journal-bookmark course-icon"></i>
+                            </div>
+                            <p>Préparation au BEPC avec suivi personnalisé et méthodes adaptées à chaque élève.</p>
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> ...</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> ...</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Renforcement en français</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> ...</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Histoire-Géographie</li>
+                            </ul>
+                            <div class="price">12.000 F</div>
+                            <a href="#section_5" class="btn btn-custom w-100">S'inscrire</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="card-course">
+                        <div class="card-header">Terminale</div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <i class="bi bi-mortarboard course-icon"></i>
+                            </div>
+                            <p>Préparation BAC avec méthodes innovantes.</p>
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Philosophie...</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Mathématiques..</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Physique-Chimie</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Sciences de la Vie et de la Terre</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Anglais...</li>
+                            </ul>
+                            <div class="price">19.000 F</div>
+                            <a href="#section_5" class="btn btn-custom w-100">S'inscrire</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="card-course">
+                         <img src="images/IMG-02.jpg" class="img-fluid rounded-4 shadow-lg" alt="Cours de perfectionnement" style="max-height: 500px;">
+                        <div class="card-header">BEPG</div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <i class="bi bi-briefcase course-icon"></i>
+                            </div>
+                            <p>Programme spécial professionnels avec horaires flexibles et formation accélérée.</p>
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Prépas Infas...</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Conception et vente d'ouvrages pédagogiques</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Coaching Scolaire</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Management des écoles</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Langues étrangères </li>
+                            </ul>
+                            <div class="price">15.000 F</div>
+                            <a href="#section_5" class="btn btn-custom w-100">S'inscrire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 3 - Enseignants -->
+    <section class="py-5 bg-light" id="section_3" style="padding: 100px 0;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5 animate-on-scroll">
+                    <h2 class="section-title center">Nos Enseignants Qualifiés</h2>
+                    <p class="lead">Une équipe d'experts pédagogues avec plus de 15 ans d'expérience</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="teacher-img" alt="COACH KORE">
+                        <h4>COACH KORE</h4>
+                        <h6 class="text-primary">Fondateur & Expert Pédagogique</h6>
+                        <p class="mt-3">Spécialiste des pédagogies innovantes avec 15 ans d'expérience dans la préparation aux examens nationaux.</p>
+                        <div class="mt-4">
+                            <span class="badge bg-primary me-2">Mathématiques</span>
+                            <span class="badge bg-primary me-2">Physique</span>
+                            <span class="badge bg-primary">Méthodologie</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="teacher-img" alt="Mme Diallo">
+                        <h4>Mme Diallo</h4>
+                        <h6 class="text-primary">Professeure de Français</h6>
+                        <p class="mt-3">Docteure en Littérature, elle prépare les étudiants aux épreuves écrites et orales avec des méthodes éprouvées.</p>
+                        <div class="mt-4">
+                            <span class="badge bg-primary me-2">Littérature</span>
+                            <span class="badge bg-primary me-2">Philosophie</span>
+                            <span class="badge bg-primary">Expression</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="teacher-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="teacher-img" alt="M. Kouassi">
+                        <h4>M. Kouassi</h4>
+                        <h6 class="text-primary">Professeur d'Anglais</h6>
+                        <p class="mt-3">Bilingue et formé à Cambridge, il développe des programmes d'anglais adaptés aux besoins des examens nationaux.</p>
+                        <div class="mt-4">
+                            <span class="badge bg-primary me-2">Anglais</span>
+                            <span class="badge bg-primary me-2">Business English</span>
+                            <span class="badge bg-primary">TOEIC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 4 - Témoignages -->
+    <section class="py-5" id="section_4" style="padding: 100px 0;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5 animate-on-scroll">
+                    <h2 class="section-title center">Témoignages</h2>
+                    <p class="lead">Ce que disent nos étudiants et leurs parents</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="testimonial-card">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="testimonial-avatar me-3" alt="Aya">
+                                                <div>
+                                                    <h5 class="mb-0">Aya</h5>
+                                                    <small class="text-primary">Étudiante en Terminale</small>
+                                                </div>
+                                            </div>
+                                            <div class="reviews-group mb-3">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0">"Grâce aux cours du soir, j'ai pu améliorer mes notes en maths de 3 points en 2 mois seulement. Les enseignants sont à l'écoute et très pédagogues."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="testimonial-card">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="testimonial-avatar me-3" alt="Jean">
+                                                <div>
+                                                    <h5 class="mb-0">Jean</h5>
+                                                    <small class="text-primary">Parent d'élève</small>
+                                                </div>
+                                            </div>
+                                            <div class="reviews-group mb-3">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                            </div>
+                                            <p class="mb-0">"Ma fille a obtenu son BEPC grâce à l'accompagnement personnalisé du Groupe Academic. Le suivi régulier et les conseils méthodologiques ont fait toute la différence."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="testimonial-card">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="testimonial-avatar me-3" alt="Kadija">
+                                                <div>
+                                                    <h5 class="mb-0">Kadija</h5>
+                                                    <small class="text-primary">Étudiante BEPG</small>
+                                                </div>
+                                            </div>
+                                            <div class="reviews-group mb-3">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0">"Les cours du soir m'ont permis de concilier travail et préparation à l'examen. L'équipe pédagogique est très flexible et s'adapte à nos contraintes professionnelles."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Précédent</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Suivant</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 5 - Contact -->
+    <section class="contact-section" id="section_5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5 animate-on-scroll">
+                    <h2 class="section-title center">Contact et Inscription</h2>
+                    <p class="lead">Réservez votre place dès maintenant pour la prochaine session</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0 animate-on-scroll">
+                    <div class="contact-form">
+                        <h4 class="mb-4">Formulaire d'inscription</h4>
+                        <form id="inscriptionForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nom Complet</label>
+                                <input type="text" class="form-control" id="name" placeholder="Votre nom" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Téléphone</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Votre numéro" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Votre email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="niveau" class="form-label">Niveau</label>
+                                <select class="form-select" id="niveau" required>
+                                    <option value="">Choisissez votre niveau</option>
+                                    <option>3ème</option>
+                                    <option>Terminale</option>
+                                    <option>BEPG</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="3" placeholder="Votre message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-custom w-100">Envoyer la demande</button>
+                        </form>
+                        <div id="formMessage" class="mt-3 text-center"></div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 animate-on-scroll">
+                    <div class="contact-info">
+                        <h3 class="mb-4">Informations de contact</h3>
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="bi bi-geo-alt fs-4 me-3"></i>
+                            <div>
+                                <h5>Adresse</h5>
+                                <p>PORT-BOUET GONZAGUE, TERRE ROUGE<br>
+                                <small>Près de la boulangerie Paris Baguette</small></p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="bi bi-telephone fs-4 me-3"></i>
+                            <div>
+                                <h5>Téléphone</h5>
+                                <p><a href="tel:0102400452">01 02 400 452</a></p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="bi bi-whatsapp fs-4 me-3"></i>
+                            <div>
+                                <h5>WhatsApp</h5>
+                                <p><a href="https://wa.me/2250102400452">Envoyer un message</a></p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="bi bi-clock fs-4 me-3"></i>
+                            <div>
+                                <h5>Horaires</h5>
+                                <p>Lundi-Vendredi : 16h-20h<br>
+                                Samedi : 9h-12h</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-5">
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <a class="navbar-brand text-white" href="#">
+                        <i class="bi bi-book me-2"></i>
+                        <span>Groupe Academic Le Succès</span>
+                    </a>
+                    <p class="mt-3">Depuis 15 ans, nous accompagnons les étudiants vers l'excellence scolaire et la réussite aux examens.</p>
+                </div>
+                
+                <div class="col-lg-6 text-lg-end">
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/16H9umCKXa/" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        
+                        <a href="https://wa.me/2250102400452" class="text-white"><i class="bi bi-WhatsApp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2025 Groupe Academic Le Succès. Tous droits réservés by Hackhenaton Tech.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white me-3">Mentions légales</a>
+                    <a href="#" class="text-white">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Back to top button
+            const backToTop = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+            
+            backToTop.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active nav link
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Form submission
+            const form = document.getElementById('inscriptionForm');
+            const formMessage = document.getElementById('formMessage');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simulate form submission
+                formMessage.innerHTML = '<div class="alert alert-success">Votre inscription a été envoyée avec succès! Nous vous contacterons très bientôt.</div>';
+                form.reset();
+                
+                // Scroll to message
+                formMessage.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Countdown timer
+            const countdownDate = new Date('April 21, 2025 08:00:00').getTime();
+            
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+                document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+                
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.querySelector('.countdown').innerHTML = '<h5 class="text-center">Les cours ont commencé !</h5>';
+                }
+            }
+            
+            updateCountdown();
+            const countdownInterval = setInterval(updateCountdown, 1000);
+        });
+    </script>
+</body>
+</html>
