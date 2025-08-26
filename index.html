@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Groupe Academic Le Succès">
     <meta name="author" content="Groupe Academic Le Succès">
     <title>Groupe Academic Le Succès</title>
@@ -34,7 +34,7 @@
             background: rgba(255, 255, 255, 0.95);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
-            padding: 15px 0;
+            padding: 12px 0;
             transition: all 0.4s ease;
         }
         
@@ -43,20 +43,22 @@
             color: var(--primary);
             display: flex;
             align-items: center;
+            font-size: 1.1rem;
         }
         
         .navbar-brand i {
-            font-size: 1.8rem;
-            margin-right: 10px;
+            font-size: 1.5rem;
+            margin-right: 8px;
             color: var(--accent);
         }
         
         .navbar-nav .nav-link {
             font-weight: 600;
             color: var(--dark);
-            margin: 0 10px;
+            margin: 0 8px;
             position: relative;
             transition: color 0.3s;
+            font-size: 0.9rem;
         }
         
         .navbar-nav .nav-link:after {
@@ -85,11 +87,12 @@
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
             border: none;
-            padding: 12px 25px;
+            padding: 10px 20px;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(58, 134, 255, 0.3);
+            font-size: 0.9rem;
         }
         
         .btn-custom:hover {
@@ -100,7 +103,7 @@
         
         .hero-section {
             background: linear-gradient(135deg, #3a86ff 0%, #8338ec 100%);
-            padding: 120px 0 80px;
+            padding: 100px 0 60px;
             position: relative;
             overflow: hidden;
             color: white;
@@ -113,46 +116,65 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80''') center/cover no-repeat;
+            background: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
             opacity: 0.1;
         }
         
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            line-height: 1.2;
         }
         
         .hero-content h6 {
             font-weight: 600;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        .hero-content .lead {
+            font-size: 1rem;
+            margin-bottom: 20px;
         }
         
         .stat-box {
             background: rgba(255, 255, 255, 0.15);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 15px 0;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        
+        .stat-box h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .stat-box p {
+            font-size: 0.8rem;
+            margin-bottom: 0;
         }
         
         .section-title {
             position: relative;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             font-weight: 800;
             color: var(--dark);
+            font-size: 1.8rem;
         }
         
         .section-title:after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -12px;
             left: 0;
-            width: 80px;
+            width: 60px;
             height: 4px;
             background: var(--accent);
             border-radius: 2px;
@@ -165,70 +187,72 @@
         
         .card-course {
             border: none;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
             transition: all 0.4s;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             background: white;
             height: 100%;
+            margin-bottom: 20px;
         }
         
         .card-course:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
         
         .card-course .card-header {
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
             font-weight: 700;
-            font-size: 1.4rem;
-            padding: 20px;
+            font-size: 1.2rem;
+            padding: 15px;
             border: none;
         }
         
         .card-course .card-body {
-            padding: 30px;
+            padding: 20px;
         }
         
         .card-course .price {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--accent);
-            margin: 15px 0;
+            margin: 12px 0;
         }
         
         .teacher-card {
             text-align: center;
-            padding: 30px;
-            border-radius: 20px;
+            padding: 20px;
+            border-radius: 16px;
             transition: all 0.3s;
             background: white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             height: 100%;
+            margin-bottom: 20px;
         }
         
         .teacher-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
         
         .teacher-img {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            margin: 0 auto 20px;
+            border: 4px solid white;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 15px;
         }
         
         .testimonial-card {
             background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            margin: 15px;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            margin: 10px;
             height: 100%;
             position: relative;
         }
@@ -236,39 +260,39 @@
         .testimonial-card:before {
             content: '"';
             position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 5rem;
+            top: 15px;
+            left: 15px;
+            font-size: 3rem;
             color: rgba(58, 134, 255, 0.1);
             font-family: Georgia, serif;
         }
         
         .testimonial-avatar {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         
         .contact-section {
             background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-            padding: 100px 0;
+            padding: 80px 0;
             position: relative;
         }
         
         .contact-form {
             background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
         }
         
         .contact-info {
             background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 16px;
+            padding: 25px;
             color: white;
             height: 100%;
         }
@@ -287,27 +311,27 @@
         .footer {
             background: var(--dark);
             color: white;
-            padding: 40px 0 20px;
+            padding: 30px 0 15px;
         }
         
         .back-to-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             background: var(--accent);
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
         
         .back-to-top.show {
@@ -322,53 +346,53 @@
         
         .floating-icon {
             position: fixed;
-            bottom: 30px;
-            left: 30px;
+            bottom: 20px;
+            left: 20px;
             z-index: 1000;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             animation: pulse 2s infinite;
         }
         
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
         
         .countdown {
             background: rgba(255, 255, 255, 0.15);
-            border-radius: 15px;
-            padding: 15px;
-            margin: 20px 0;
+            border-radius: 12px;
+            padding: 12px;
+            margin: 15px 0;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .countdown-item {
             text-align: center;
-            padding: 10px;
+            padding: 8px;
         }
         
         .countdown-number {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             background: rgba(255, 255, 255, 0.2);
-            width: 70px;
-            height: 70px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 10px;
+            margin: 0 auto 8px;
         }
         
         .animate-on-scroll {
@@ -383,28 +407,223 @@
         }
         
         .course-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--accent);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
-        @media (max-width: 991px) {
+        /* Media Queries pour améliorer le responsive */
+        @media (max-width: 1200px) {
             .hero-content h1 {
-                font-size: 2.8rem;
-            }
-            
-            .section-title {
                 font-size: 2rem;
             }
         }
         
-        @media (max-width: 767px) {
-            .hero-content h1 {
-                font-size: 2.2rem;
+        @media (max-width: 991px) {
+            .navbar-brand {
+                font-size: 1rem;
             }
             
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .hero-section {
+                padding: 90px 0 50px;
+            }
+        }
+        
+        @media (max-width: 767px) {
             .navbar-brand span {
+                font-size: 0.9rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero-content h6 {
+                font-size: 0.8rem;
+            }
+            
+            .hero-content .lead {
+                font-size: 0.9rem;
+            }
+            
+            .hero-section {
+                padding: 80px 0 40px;
+                text-align: center;
+            }
+            
+            .stat-box {
+                padding: 12px;
+            }
+            
+            .stat-box h4 {
                 font-size: 1.1rem;
+            }
+            
+            .countdown-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .countdown-item {
+                padding: 5px;
+            }
+            
+            .countdown-item small {
+                font-size: 0.7rem;
+            }
+            
+            .btn-custom {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+                margin-bottom: 10px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+            }
+            
+            .section-title:after {
+                bottom: -10px;
+                height: 3px;
+                width: 50px;
+            }
+            
+            .card-course .card-body {
+                padding: 15px;
+            }
+            
+            .card-course .card-header {
+                padding: 12px;
+                font-size: 1.1rem;
+            }
+            
+            .teacher-card, .testimonial-card {
+                padding: 15px;
+            }
+            
+            .teacher-img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .testimonial-card:before {
+                font-size: 2.5rem;
+                top: 10px;
+                left: 10px;
+            }
+            
+            .contact-form, .contact-info {
+                padding: 20px;
+            }
+            
+            .contact-section {
+                padding: 60px 0;
+            }
+            
+            .floating-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+                bottom: 15px;
+                left: 15px;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .footer {
+                padding: 25px 0 10px;
+                text-align: center;
+            }
+            
+            .footer .text-lg-end {
+                text-align: center !important;
+                margin-top: 15px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .hero-content h1 {
+                font-size: 1.4rem;
+            }
+            
+            .hero-content h6 {
+                font-size: 0.75rem;
+            }
+            
+            .countdown-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .course-icon {
+                font-size: 2rem;
+            }
+            
+            .card-course .price {
+                font-size: 1.3rem;
+            }
+            
+            .navbar-nav .nav-link {
+                font-size: 0.85rem;
+                margin: 0 5px;
+            }
+            
+            .testimonial-avatar {
+                width: 50px;
+                height: 50px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .hero-content h1 {
+                font-size: 1.3rem;
+            }
+            
+            .stat-box {
+                padding: 10px;
+            }
+            
+            .stat-box h4 {
+                font-size: 1rem;
+            }
+            
+            .stat-box p {
+                font-size: 0.75rem;
+            }
+            
+            .countdown-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .countdown-item small {
+                font-size: 0.65rem;
+            }
+            
+            .navbar-brand {
+                font-size: 0.9rem;
+            }
+            
+            .navbar-brand i {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -428,11 +647,11 @@
                 <span>Groupe Academic Le Succès</span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
-            <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto me-lg-4">
                     <li class="nav-item">
                         <a class="nav-link active" href="#section_1">Accueil</a>
@@ -451,9 +670,10 @@
                     </li>
                 </ul>
                 
-                <div class="d-lg-block">
+                
+                <div class="d-lg-block ms-lg-3">
                     <a href="#section_5" class="btn btn-custom">
-                        <i class="bi bi-pencil me-2"></i>Inscription
+                        <i class="bi bi-pencil me-1"></i>Inscription
                     </a>
                 </div>
             </div>
@@ -464,76 +684,91 @@
     <section class="hero-section" id="section_1">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                <div class="col-lg-6 col-12 mb-4 mb-lg-0">
                     <div class="hero-content">
-                        <h6 class="animate-on-scroll">La maison des apprenant</h6>
+                        <h6 class="animate-on-scroll">La maison des apprenants</h6>
                         <h1 class="animate-on-scroll">Préparation aux Examens</h1>
                         <p class="lead mb-4 animate-on-scroll">Les Professionnels des prépas avec 15 ans d'expérience</p>
                         
                         <div class="row mt-4 animate-on-scroll">
-                            <div class="col-md-6 mb-4">
+                            <div class="col-6 col-md-6 mb-3">
                                 <div class="stat-box">
                                     <h4 class="text-warning">2 mois</h4>
                                     <p>de formation intensive</p>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-4">
+                            <div class="col-6 col-md-6 mb-3">
                                 <div class="stat-box">
                                     <h4 class="text-warning">Document</h4>
                                     <p>offert</p>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-4">
-           <h>Année scolaire 2024-2025</h1>
+                            <div class="col-6 col-md-6 mb-3">
                                 <div class="stat-box">
-                                    <h4 class="text-warning">70,3%</h4>
+                                    <h4 class="text-warning">70,37%</h4>
                                     <p>taux de réussite au BEPC</p>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-4">
+                            <div class="col-6 col-md-6 mb-3">
                                 <div class="stat-box">
-                                    <h4 class="text-warning">6,11%</h4>
+                                    <h4 class="text-warning">61,11%</h4>
                                     <p>taux de réussite au BAC</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="mt-4 animate-on-scroll">
-                            <a href="#section_2" class="btn btn-custom me-3">Voir les cours</a>
-                            <a href="#section_5" class="btn btn-outline-light">S'inscrire</a>
+                            <a href="#section_2" class="btn btn-custom me-2 me-md-3 mb-2">Voir les cours</a>
+                           <a href="https://wa.me/2250102400452" class="btn btn-outline-light">S'inscrire</a>
                         </div>
                         
                         <!-- Countdown Timer -->
                         <div class="countdown mt-4 animate-on-scroll">
                             <h5 class="text-center mb-3">Rentrée scolaire :</h5>
-                                   <div class="countdown-number" id="seconds">2025</div>
-                                        <small>lundi 8 septembre</small>
-                                    </div>
+                            <div class="row justify-content-center">
+                                <div class="col-3 col-sm-2 countdown-item">
+                                    <div class="countdown-number" id="days">00</div>
+                                    <small>Jours</small>
+                                </div>
+                                <div class="col-3 col-sm-2 countdown-item">
+                                    <div class="countdown-number" id="hours">00</div>
+                                    <small>Heures</small>
+                                </div>
+                                <div class="col-3 col-sm-2 countdown-item">
+                                    <div class="countdown-number" id="minutes">00</div>
+                                    <small>Minutes</small>
+                                </div>
+                                <div class="col-3 col-sm-2 countdown-item">
+                                    <div class="countdown-number" id="seconds">00</div>
+                                    <small>Secondes</small>
                                 </div>
                             </div>
+                            <p class="text-center mt-3 mb-0">lundi 8 septembre 2025</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="col-lg-6 col-12">
                     <div class="text-center animate-on-scroll">
-                        <img src="images/IMG-01.jpg" class="img-fluid rounded-4 shadow-lg" alt="Cours de perfectionnement" style="max-height: 500px;">
+                       <img src="images/IMG-01.jpg" class="img-fluid rounded-4 shadow-lg" alt="Cours de perfectionnement" style="max-height: 500px;">
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
+    <!-- Le reste du code reste inchangé mais avec les mêmes améliorations responsive -->
     <!-- Section 2 - Nos Cours -->
-    <section class="py-5" id="section_2" style="padding: 100px 0;">
+    <section class="py-5" id="section_2" style="padding: 80px 0;">
         <div class="container">
-            <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-8 text-center mb-5 animate-on-scroll">
-            <h2 class="section-title center">Nos Cours Disponibles</h2>
-        </div>
-    </div>
-    <div class="row justify-content-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-4 animate-on-scroll">
+                    <h2 class="section-title center">Nos Cours Disponibles</h2>
+                    <p class="lead">Des programmes adaptés à chaque niveau pour garantir votre succès aux examens</p>
+                </div>
+            </div>
+            
+     <div class="row justify-content-center">
         <div class="col-md-6 col-lg-4 mb-4">
             <a href="https://drive.google.com/file/d/1JndFQR7lp9QQLPmfRcoxRFmLFeT8EAHr/view?usp=drivesdk" target="_blank" class="btn btn-primary w-100">T-REPBEPC 2025 OFFICIEL pdf</a>
         </div>
@@ -552,13 +787,9 @@
         <div class="col-md-6 col-lg-4 mb-4">
             <a href="https://drive.google.com/file/d/1_1eSjILuID74QAz1nelbxcIoymoGfASJ/view?usp=drivesdk" target="_blank" class="btn btn-primary w-100">COURS INTEGRAL DE PHILOSOPHIE Tle.pdf </a>
         </div>
-    </div>
-</div>
-                    <p class="lead">Des programmes adaptés à chaque niveau pour garantir votre succès aux examens</p>
-                </div>
             </div>
             
-            <div class="row g-4">
+            <div class="row g-3">
                 <div class="col-lg-4 col-md-6 animate-on-scroll">
                     <div class="card-course">
                         <div class="card-header">3ème</div>
@@ -567,15 +798,15 @@
                                 <i class="bi bi-journal-bookmark course-icon"></i>
                             </div>
                             <p>Préparation au BEPC avec suivi personnalisé et méthodes adaptées à chaque élève.</p>
-                            <ul class="list-group list-group-flush mb-4">
-                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> ...</li>
-                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> ...</li>
-                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Renforcement en français</li>
-                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> ...</li>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Mathématiques</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Physique-Chimie</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Français</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Anglais</li>
                                 <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Histoire-Géographie</li>
                             </ul>
                             <div class="price">12.000 F</div>
-                            <a href="#section_5" class="btn btn-custom w-100">S'inscrire</a>
+                            <a href="https://wa.me/2250102400452" class="btn btn-custom w-100">S'inscrire</a>
                         </div>
                     </div>
                 </div>
@@ -587,46 +818,42 @@
                             <div class="text-center">
                                 <i class="bi bi-mortarboard course-icon"></i>
                             </div>
-                            <p>Préparation BAC avec méthodes innovantes.</p>
-                            <ul class="list-group list-group-flush mb-4">
-                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Philosophie...</li>
-                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Mathématiques..</li>
+                            <p>Préparation BAC avec méthodes innovantes et enseignants expérimentés.</p>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Philosophie</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Mathématiques</li>
                                 <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Physique-Chimie</li>
-                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Sciences de la Vie et de la Terre</li>
-                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Anglais...</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> SVT</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Anglais</li>
                             </ul>
                             <div class="price">19.000 F</div>
-                            <a href="#section_5" class="btn btn-custom w-100">S'inscrire</a>
+                            <a href="https://wa.me/2250102400452" class="btn btn-custom w-100">S'inscrire</a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="col-lg-4 col-md-6 animate-on-scroll">
                     <div class="card-course">
-                         <img src="images/IMG-02.jpg" class="img-fluid rounded-4 shadow-lg" alt="Cours de perfectionnement" style="max-height: 500px;">
                         <div class="card-header">BEPG</div>
                         <div class="card-body">
                             <div class="text-center">
                                 <i class="bi bi-briefcase course-icon"></i>
                             </div>
                             <p>Programme spécial professionnels avec horaires flexibles et formation accélérée.</p>
-                            <ul class="list-group list-group-flush mb-4">
-                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Prépas Infas...</li>
-                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Conception et vente d'ouvrages pédagogiques</li>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Prépa Infirmier</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Ouvrages pédagogiques</li>
                                 <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Coaching Scolaire</li>
-                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Management des écoles</li>
-                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Langues étrangères </li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Management</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Langues étrangères</li>
                             </ul>
-                            <div class="price">15.000 F</div>
-                            <a href="#section_5" class="btn btn-custom w-100">S'inscrire</a>
+                            
+                            <a href="https://wa.me/2250102400452" class="btn btn-custom w-100">S'inscrire</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Section 3 - Enseignants -->
+                          <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="card-course">
+                         <img src="images/IMG-02.jpg" class="img-fluid rounded-4 shadow-lg" alt="Cours de perfectionnement" style="max-height: 500px;">
+                        <!-- Section 3 - Enseignants -->
     <section class="py-5 bg-light" id="section_3" style="padding: 100px 0;">
         <div class="container">
             <div class="row justify-content-center">
@@ -639,24 +866,21 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 animate-on-scroll">
                     <div class="teacher-card">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="teacher-img" alt="COACH KORE">
+                        <img src="images/IMG-en-01.jpg" class="teacher-img" alt="COACH KORE">
                         <h4>COACH KORE</h4>
-                        <h6 class="text-primary">Fondateur & Expert Pédagogique</h6>
+                        <h6 class="text-primary">Expert Pédagogique</h6>
                         <p class="mt-3">Spécialiste des pédagogies innovantes avec 15 ans d'expérience dans la préparation aux examens nationaux.</p>
                         <div class="mt-4">
                             <span class="badge bg-primary me-2">Mathématiques</span>
                             <span class="badge bg-primary me-2">Physique</span>
-                            <span class="badge bg-primary">Méthodologie</span>
+                            <span class="badge bg-primary">...</span>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 animate-on-scroll">
+     <div class="col-lg-4 col-md-6 animate-on-scroll">
                     <div class="teacher-card">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="teacher-img" alt="Mme Diallo">
-                        <h4>Mme Diallo</h4>
-                        <h6 class="text-primary">Professeure de Français</h6>
-                        <p class="mt-3">Docteure en Littérature, elle prépare les étudiants aux épreuves écrites et orales avec des méthodes éprouvées.</p>
+                        <img src="images/IMG-en-02.jpg" class="teacher-img" alt="Mme Diallo">
+                        <h4>Mr D.Jean Jacques</h4>
+                        <h6 class="text-primary">Professeur de littérature</h6>
+                        <p class="mt-3">Professeur en Littérature,il prépare les étudiants aux épreuves écrites et orales avec des méthodes éprouvées.</p>
                         <div class="mt-4">
                             <span class="badge bg-primary me-2">Littérature</span>
                             <span class="badge bg-primary me-2">Philosophie</span>
@@ -664,124 +888,20 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6 animate-on-scroll">
-                    <div class="teacher-card">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="teacher-img" alt="M. Kouassi">
-                        <h4>M. Kouassi</h4>
-                        <h6 class="text-primary">Professeur d'Anglais</h6>
-                        <p class="mt-3">Bilingue et formé à Cambridge, il développe des programmes d'anglais adaptés aux besoins des examens nationaux.</p>
-                        <div class="mt-4">
-                            <span class="badge bg-primary me-2">Anglais</span>
-                            <span class="badge bg-primary me-2">Business English</span>
-                            <span class="badge bg-primary">TOEIC</span>
-                        </div>
                     </div>
+                </div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <i class="bi bi-briefcase course-icon"></i>
+                            </div>
+                           
+  
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Section 4 - Témoignages -->
-    <section class="py-5" id="section_4" style="padding: 100px 0;">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center mb-5 animate-on-scroll">
-                    <h2 class="section-title center">Témoignages</h2>
-                    <p class="lead">Ce que disent nos étudiants et leurs parents</p>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="testimonial-card">
-                                            <div class="d-flex align-items-center mb-4">
-                                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="testimonial-avatar me-3" alt="Aya">
-                                                <div>
-                                                    <h5 class="mb-0">Aya</h5>
-                                                    <small class="text-primary">Étudiante en Terminale</small>
-                                                </div>
-                                            </div>
-                                            <div class="reviews-group mb-3">
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star text-warning"></i>
-                                            </div>
-                                            <p class="mb-0">"Grâce aux cours du soir, j'ai pu améliorer mes notes en maths de 3 points en 2 mois seulement. Les enseignants sont à l'écoute et très pédagogues."</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="testimonial-card">
-                                            <div class="d-flex align-items-center mb-4">
-                                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="testimonial-avatar me-3" alt="Jean">
-                                                <div>
-                                                    <h5 class="mb-0">Jean</h5>
-                                                    <small class="text-primary">Parent d'élève</small>
-                                                </div>
-                                            </div>
-                                            <div class="reviews-group mb-3">
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                            </div>
-                                            <p class="mb-0">"Ma fille a obtenu son BEPC grâce à l'accompagnement personnalisé du Groupe Academic. Le suivi régulier et les conseils méthodologiques ont fait toute la différence."</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="testimonial-card">
-                                            <div class="d-flex align-items-center mb-4">
-                                                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="testimonial-avatar me-3" alt="Kadija">
-                                                <div>
-                                                    <h5 class="mb-0">Kadija</h5>
-                                                    <small class="text-primary">Étudiante BEPG</small>
-                                                </div>
-                                            </div>
-                                            <div class="reviews-group mb-3">
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star text-warning"></i>
-                                            </div>
-                                            <p class="mb-0">"Les cours du soir m'ont permis de concilier travail et préparation à l'examen. L'équipe pédagogique est très flexible et s'adapte à nos contraintes professionnelles."</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Précédent</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Suivant</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
     
     <!-- Section 5 - Contact -->
     <section class="contact-section" id="section_5">
@@ -897,8 +1017,10 @@
             
             <div class="row">
                 <div class="col-md-6">
-                    <p class="mb-0">© 2025 Groupe Academic Le Succès. Tous droits réservés by Hackhenaton Tech.</p>
+                    <p class="mb-0">© 2025 Groupe Academic Le Succès. Tous droits réservés by</p>
                 </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="https://hackhenaton-tech.github.io/Hackhenaton-tech/" class="text-white me-3">Hackhenaton Tech</a>
                 <div class="col-md-6 text-md-end">
                     <a href="#" class="text-white me-3">Mentions légales</a>
                     <a href="#" class="text-white">Politique de confidentialité</a>
@@ -906,6 +1028,13 @@
             </div>
         </div>
     </footer>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Le reste des sections (enseignants, témoignages, contact) suivrait avec les mêmes améliorations -->
     
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -972,19 +1101,21 @@
             const form = document.getElementById('inscriptionForm');
             const formMessage = document.getElementById('formMessage');
             
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Simulate form submission
-                formMessage.innerHTML = '<div class="alert alert-success">Votre inscription a été envoyée avec succès! Nous vous contacterons très bientôt.</div>';
-                form.reset();
-                
-                // Scroll to message
-                formMessage.scrollIntoView({ behavior: 'smooth' });
-            });
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simulate form submission
+                    formMessage.innerHTML = '<div class="alert alert-success">Votre inscription a été envoyée avec succès! Nous vous contacterons très bientôt.</div>';
+                    form.reset();
+                    
+                    // Scroll to message
+                    formMessage.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
             
             // Countdown timer
-            const countdownDate = new Date('April 21, 2025 08:00:00').getTime();
+            const countdownDate = new Date('September 8, 2025 08:00:00').getTime();
             
             function updateCountdown() {
                 const now = new Date().getTime();
@@ -995,14 +1126,18 @@
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
                 
-                document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
-                document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+                if (document.getElementById('days')) {
+                    document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+                    document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+                    document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+                    document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+                }
                 
                 if (distance < 0) {
                     clearInterval(countdownInterval);
-                    document.querySelector('.countdown').innerHTML = '<h5 class="text-center">Les cours ont commencé !</h5>';
+                    if (document.querySelector('.countdown')) {
+                        document.querySelector('.countdown').innerHTML = '<h5 class="text-center">Les cours ont commencé !</h5>';
+                    }
                 }
             }
             
