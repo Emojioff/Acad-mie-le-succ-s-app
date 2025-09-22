@@ -1,66 +1,1110 @@
-                                        <div class="d-flex align-items-center mb-4">
-                                            <div class="testimonial-avatar me-3" style="width: 60px; height: 60px; background-color: #3498db; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px;">
-                                                JB
-                                            </div>
-                                            <div>
-                                                <h5 class="mb-0">Joel Bah</h5>
-                                                <small class="text-primary">Étudiant 2022-2023</small>
-                                            </div>
-                                        </div>
-                                        <div class="reviews-group mb-3">
-                                            <i class="bi bi-star-fill text-warning"></i>
-                                            <i class="bi bi-star-fill text-warning"></i>
-                                            <i class="bi bi-star-fill text-warning"></i>
-                                            <i class="bi bi-star-fill text-warning"></i>
-                                            <i class="bi bi-star-fill text-warning"></i>
-                                        </div>
-                                        <p class="mb-0">"J'ai eu l'immense privilège d'étudier au Groupe Académie Le Succès entre 2022 et 2023. Ce fut bien plus qu'une simple année scolaire. C'est ici que j'ai découvert ma passion pour l'histoire grâce à Monsieur Degnadji J Jacques, un enseignant exceptionnel dont la manière vivante de transmettre le savoir a éveillé en moi une flamme qui ne s'est jamais éteinte. Aujourd'hui antiquisant, je me perds avec bonheur dans les civilisations anciennes, en grande partie grâce à lui."</p>
-                                    </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Groupe Académie Le Succès - Centre de préparation d'études et de mise à niveau">
+    <meta name="author" content="Groupe Académie Le Succès">
+    <title>Groupe Académie Le Succès</title>
+    
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+    <style>
+        :root {
+            --primary: #2c5aa0;
+            --secondary: #d4af37;
+            --accent: #1a936f;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #3498db;
+        }
+        
+        body {
+            font-family: 'Unbounded', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark);
+        }
+        
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            transition: all 0.4s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .navbar-brand i {
+            font-size: 1.5rem;
+            margin-right: 8px;
+            color: var(--secondary);
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 600;
+            color: var(--dark);
+            margin: 0 8px;
+            position: relative;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .navbar-nav .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            transition: width 0.3s;
+            border-radius: 3px;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .navbar-nav .nav-link:hover:after,
+        .navbar-nav .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .btn-custom {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
+            font-size: 0.9rem;
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(44, 90, 160, 0.4);
+            color: white;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #3a70c4 100%);
+            padding: 100px 0 60px;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+            opacity: 0.1;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            line-height: 1.2;
+        }
+        
+        .hero-content h6 {
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+        }
+        
+        .hero-content .lead {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        .stat-box {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stat-box h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .stat-box p {
+            font-size: 0.8rem;
+            margin-bottom: 0;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            font-weight: 800;
+            color: var(--dark);
+            font-size: 1.8rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .section-title.center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .card-course {
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            background: white;
+            height: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .card-course:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-course .card-header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 15px;
+            border: none;
+        }
+        
+        .card-course .card-body {
+            padding: 20px;
+        }
+        
+        .card-course .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 12px 0;
+        }
+        
+        .teacher-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 16px;
+            transition: all 0.3s;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .teacher-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .teacher-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 15px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            margin: 10px;
+            height: 100%;
+            position: relative;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 3rem;
+            color: rgba(44, 90, 160, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .contact-form {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 16px;
+            padding: 25px;
+            color: white;
+            height: 100%;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: var(--light);
+            text-decoration: underline;
+        }
+        
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 30px 0 15px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .floating-icon {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        .countdown {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 12px;
+            margin: 15px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .countdown-item {
+            text-align: center;
+            padding: 8px;
+        }
+        
+        .countdown-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.3);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            color: white;
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .course-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        /* Nouveaux styles pour les témoignages */
+        .testimonial-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-initials {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-rating {
+            color: var(--warning);
+            margin-bottom: 10px;
+        }
+        
+        /* Media Queries pour améliorer le responsive */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .navbar-brand {
+                font-size: 1rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .hero-section {
+                padding: 90px 0 50px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .navbar-brand span {
+                font-size: 0.9rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero-content h6 {
+                font-size: 0.8rem;
+            }
+            
+            .hero-content .lead {
+                font-size: 0.9rem;
+            }
+            
+            .hero-section {
+                padding: 80px 0 40px;
+                text-align: center;
+            }
+            
+            .stat-box {
+                padding: 12px;
+            }
+            
+            .stat-box h4 {
+                font-size: 1.1rem;
+            }
+            
+            .countdown-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .countdown-item {
+                padding: 5px;
+            }
+            
+            .countdown-item small {
+                font-size: 0.7rem;
+            }
+            
+            .btn-custom {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+                margin-bottom: 10px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+            }
+            
+            .section-title:after {
+                bottom: -10px;
+                height: 3px;
+                width: 50px;
+            }
+            
+            .card-course .card-body {
+                padding: 15px;
+            }
+            
+            .card-course .card-header {
+                padding: 12px;
+                font-size: 1.1rem;
+            }
+            
+            .teacher-card, .testimonial-card {
+                padding: 15px;
+            }
+            
+            .teacher-img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .testimonial-card:before {
+                font-size: 2.5rem;
+                top: 10px;
+                left: 10px;
+            }
+            
+            .contact-form, .contact-info {
+                padding: 20px;
+            }
+            
+            .contact-section {
+                padding: 60px 0;
+            }
+            
+            .floating-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+                bottom: 15px;
+                left: 15px;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .footer {
+                padding: 25px 0 10px;
+                text-align: center;
+            }
+            
+            .footer .text-lg-end {
+                text-align: center !important;
+                margin-top: 15px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .hero-content h1 {
+                font-size: 1.4rem;
+            }
+            
+            .hero-content h6 {
+                font-size: 0.75rem;
+            }
+            
+            .countdown-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .course-icon {
+                font-size: 2rem;
+            }
+            
+            .card-course .price {
+                font-size: 1.3rem;
+            }
+            
+            .navbar-nav .nav-link {
+                font-size: 0.85rem;
+                margin: 0 5px;
+            }
+            
+            .testimonial-avatar {
+                width: 50px;
+                height: 50px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .hero-content h1 {
+                font-size: 1.3rem;
+            }
+            
+            .stat-box {
+                padding: 10px;
+            }
+            
+            .stat-box h4 {
+                font-size: 1rem;
+            }
+            
+            .stat-box p {
+                font-size: 0.75rem;
+            }
+            
+            .countdown-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .countdown-item small {
+                font-size: 0.65rem;
+            }
+            
+            .navbar-brand {
+                font-size: 0.9rem;
+            }
+            
+            .navbar-brand i {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+    
+<body>
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.me/2250102400452" class="floating-icon" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+    
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-book me-2"></i>
+                <span>Groupe Académie Le Succès</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-lg-4">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#section_1">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_2">Nos Cours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_3">Enseignants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_4">Témoignages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_5">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="d-lg-block ms-lg-3">
+                    <a href="#section_5" class="btn btn-custom">
+                        <i class="bi bi-pencil me-1"></i>Inscription
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Section 1 - Hero -->
+    <section class="hero-section" id="section_1">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+                    <div class="hero-content">
+                        <h6 class="animate-on-scroll">La maison des apprenants</h6>
+                        <h1 class="animate-on-scroll">Centre de préparation d'études et de mise à niveau</h1>
+                        <p class="lead mb-4 animate-on-scroll">Les Professionnels des prépas avec 15 ans d'expérience</p>
+                        
+                        <div class="row mt-4 animate-on-scroll">
+                            <div class="col-6 col-md-6 mb-3">
+                                <div class="stat-box">
+                                    <h4>Cours Privés le Succès</h4>
+                                    <p>Enseignement Général de la 6 ème à la Terminale</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-6 mb-3">
+                                <div class="stat-box">
+                                    <h4>Cours de perfect-
+                                  ionnement</h4>
+                                    <p>Enseignement Général de la 6 ème à la Terminale</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-6 mb-3">
+                                <div class="stat-box">
+                                    <h4>Prépa-examens</h4>
+                                    <p>BAC et BEPC</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-6 mb-3">
+                                <div class="stat-box">
+                                    <h4>Prépa-concours</h4>
+                                    <p>INFAS, INFS, INFJ, CAFOP etc...</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Témoignage de Nady Bamba -->
-                        <div class="carousel-item">
+                        <div class="mt-4 animate-on-scroll">
+                            <a href="#section_2" class="btn btn-custom me-2 me-md-3 mb-2">Voir les cours</a>
+                            <a href="portail.html" class="btn btn-outline-light">Connexion</a>
+                        </div>
+                        
+                        <!-- Countdown Timer -->
+                        <div class="countdown mt-4 animate-on-scroll">
+                            <h5 class="text-center mb-3">Grande réunion d'entrée :</h5>
                             <div class="row justify-content-center">
-                                <div class="col-lg-8 col-md-10">
-                                    <div class="testimonial-card">
-                                        <div class="d-flex align-items-center mb-4">
-                                            <div class="testimonial-avatar me-3" style="width: 60px; height: 60px; background-color: #e74c3c; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px;">
-                                                NB
-                                            </div>
-                                            <div>
-                                                <h5 class="mb-0">Nady Bamba</h5>
-                                                <small class="text-primary">Bachelière 2025</small>
-                                            </div>
-                                        </div>
-                                        <div class="reviews-group mb-3">
-                                            <i class="bi bi-star-fill text-warning"></i>
-                                            <i class="bi bi-star-fill text-warning"></i>
-                                            <i class="bi bi-star-fill text-warning"></i>
-                                            <i class="bi bi-star-fill text-warning"></i>
-                                            <i class="bi bi-star-half text-warning"></i>
-                                        </div>
-                                        <p class="mb-0">"L'an passé, j'ai obtenu mon baccalauréat grâce au soutien personnalisé du Groupe Académie Le Succès. Les enseignants m'ont accompagnée avec bienveillance tout au long de l'année, m'aidant à surmonter mes difficultés en mathématiques et en philosophie. Leur méthodologie et leur disponibilité ont fait toute la différence dans ma réussite. Je recommande vivement cette académie à tous les élèves souhaitant progresser et obtenir leur diplôme."</p>
-                                    </div>
+                                <div class="col-3 col-sm-2 countdown-item">
+                                    <div class="countdown-number" id="days">00</div>
+                                    <small>Jours</small>
+                                </div>
+                                <div class="col-3 col-sm-2 countdown-item">
+                                    <div class="countdown-number" id="hours">00</div>
+                                    <small>Heures</small>
+                                </div>
+                                <div class="col-3 col-sm-2 countdown-item">
+                                    <div class="countdown-number" id="minutes">00</div>
+                                    <small>Minutes</small>
+                                </div>
+                                <div class="col-3 col-sm-2 countdown-item">
+                                    <div class="countdown-number" id="seconds">00</div>
+                                    <small>Secondes</small>
                                 </div>
                             </div>
+                            <p class="text-center mt-3 mb-0">Samedi 13 octobre 2025</p>
                         </div>
                     </div>
-                    
-                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Précédent</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Suivant</span>
-                    </button>
+                </div>
+                
+                <div class="col-lg-6 col-12">
+                    <div class="text-center animate-on-scroll">
+                        <div class="text-center my-4">
+                            <h3 class="text-decoration-underline">Cours de perfectionnement</h3>
+                        </div>
+                        <img src="images/IMG-01.jpg" class="img-fluid rounded-4 shadow-lg" alt="Cours de perfectionnement" style="max-height: 500px;">      
+                  
+                        <div class="text-center my-4">
+                            <h3 class="text-decoration-underline">Cours Privés le Succès</h3>
+                        </div>
+                        <img src="images/IMG-02.jpg" class="img-fluid rounded-4 shadow-lg" alt="Cours Privés le Succès" style="max-height: 500px;">
+            
+                        <div class="text-center my-4">
+                            <h3 class="text-decoration-underline">Prépa-concours</h3>
+                        </div>
+                        <img src="images/IMG-03.jpg" class="img-fluid rounded-4 shadow-lg" alt="Prépa-concours" style="max-height: 500px;">
+
+                        <div class="text-center my-4">
+                            <h3 class="text-decoration-underline">Prépa-examens</h3>
+                        </div>
+                        <img src="images/IMG-04.jpg" class="img-fluid rounded-4 shadow-lg" alt="Prépa examens" style="max-height: 500px;">      
+                    </div>                 
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    
+    <!-- Section 2 - Nos Cours -->
+    <section class="py-5" id="section_2" style="padding: 80px 0;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-4 animate-on-scroll">
+                    <h2 class="section-title center">Bibliothèque gratuite</h2>
+                    <p class="lead">Des programmes adaptés à chaque niveau pour garantir votre succès aux examens</p>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <a href="https://drive.google.com/file/d/1JndFQR7lp9QQLPmfRcoxRFmLFeT8EAHr/view?usp=drivesdk" target="_blank" class="btn btn-primary w-100">T-REPBEPC 2025 OFFICIEL pdf</a>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <a href="https://drive.google.com/file/d/1h2gOBzuY7R-DjCZ8C3GWwgB309qkdOrN/view?usp=drivesdk" target="_blank" class="btn btn-primary w-100">T-REPBAC SCIENTIFIQUE 2025 OFFICIEL pdf</a>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <a href="https://drive.google.com/file/d/17JOHRiulVw55gqQp9rrcc1fGvwB-7vDH/view?usp=drivesdk" target="_blank" class="btn btn-primary w-100">T-REPBAC LITTERAIRE 2025 - OFFICIEL pdf</a>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <a href="https://drive.google.com/file/d/1cnNcWjoNCldSUSkC7CAjdfDxJtkwrW4f/view?usp=drivesdk" target="_blank" class="btn btn-primary w-100">CPS - Hist- Geo - Tle A-D 2025 pdf</a>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <a href="https://drive.google.com/file/d/1-ok4Je3jBEDdENYJSk2_vc8kjhjC_5bV/view?usp=drivesdk" target="_blank" class="btn btn-primary w-100">CPS - FRAN - TLE A ET D - 2025 pdf</a>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <a href="https://drive.google.com/file/d/1_1eSjILuID74QAz1nelbxcIoymoGfASJ/view?usp=drivesdk" target="_blank" class="btn btn-primary w-100">COURS INTEGRAL DE PHILOSOPHIE Tle.pdf </a>
+                </div>
+            </div>
+            
+            <div class="row g-3">
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="card-course">
+                        <div class="card-header">Cours de perfectionnement 3ème</div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <i class="bi bi-journal-bookmark course-icon"></i>
+                            </div>
+                            <p>Préparation au BEPC avec suivi personnalisé et méthodes adaptées à chaque élève.</p>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Mathématiques</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Physique-Chimie</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Français</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Anglais</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Histoire-Géographie</li>
+                            </ul>
+                            <div class="price">7.000 F</div>
+                            <a href="https://wa.me/2250102400452" class="btn btn-custom w-100">S'inscrire</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="card-course">
+                        <div class="card-header">Cours de perfectionnement Terminale</div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <i class="bi bi-mortarboard course-icon"></i>
+                            </div>
+                            <p>Préparation BAC avec méthodes innovantes et enseignants expérimentés.</p>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Philosophie</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Mathématiques</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Physique-Chimie</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> SVT</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Anglais</li>
+                            </ul>
+                            <div class="price">10.000 F</div>
+                            <a href="https://wa.me/2250102400452" class="btn btn-custom w-100">S'inscrire</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="card-course">
+                        <div class="card-header">Autres services</div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <i class="bi bi-briefcase course-icon"></i>
+                            </div>
+                            <p>Programme spécial professionnels avec horaires flexibles et formation accélérée.</p>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Prépa Infirmier</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Ouvrages pédagogiques</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Coaching Scolaire</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Management des écoles</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Langues étrangères</li>
+                            </ul>
+                            
+                            <a href="https://wa.me/2250102400452" class="btn btn-custom w-100">S'inscrire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 3 - Enseignants -->
+    <section class="py-5 bg-light" id="section_3" style="padding: 100px 0;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5 animate-on-scroll">
+                    <h2 class="section-title center">Nos Enseignants Qualifiés</h2>
+                    <p class="lead">Une équipe d'experts pédagogues avec plus de 15 ans d'expérience</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="teacher-card">
+                        <img src="images/IMG-en-01.jpg" class="teacher-img" alt="COACH KORE">
+                        <h4>COACH KORE SUCCÈS</h4>
+                        <h6 class="text-primary">Expert Pédagogique</h6>
+                        <p class="mt-3">Spécialiste des pédagogies innovantes avec 15 ans d'expérience dans la préparation aux examens nationaux.</p>
+                        <div class="mt-4">
+                            <span class="badge bg-primary me-2">Mathématiques</span>
+                            <span class="badge bg-primary me-2">Physique</span>
+                            <span class="badge bg-primary">Pédagogie</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="teacher-card">
+                        <img src="images/IMG-en-02.jpg" class="teacher-img" alt="M. D. Jean Jacques">
+                        <h4>Mr D. Jean Jacques</h4>
+                        <h6 class="text-primary">Professeur de littérature</h6>
+                        <p class="mt-3">Professeur en Littérature, il prépare les étudiants aux épreuves écrites et orales avec des méthodes éprouvées.</p>
+                        <div class="mt-4">
+                            <span class="badge bg-primary me-2">Littérature</span>
+                            <span class="badge bg-primary me-2">Philosophie</span>
+                            <span class="badge bg-primary">Expression</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="teacher-card">
+                        <img src="images/IMG-A1.jpg" class="teacher-img" alt="Enseignant Sciences">
+                        <h4>Mme Aminata Koné</h4>
+                        <h6 class="text-primary">Professeure de Sciences</h6>
+                        <p class="mt-3">Spécialiste en sciences avec une approche pratique qui aide les élèves à comprendre les concepts complexes.</p>
+                        <div class="mt-4">
+                            <span class="badge bg-primary me-2">SVT</span>
+                            <span class="badge bg-primary me-2">Physique-Chimie</span>
+                            <span class="badge bg-primary">Méthodologie</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 4 - Témoignages -->
+    <section class="py-5 testimonial-section" id="section_4" style="padding: 100px 0;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="section-title center">Témoignages d'Anciens Élèves</h2>
+                    <p class="lead">Découvrez les expériences de ceux qui ont réussi grâce à notre accompagnement</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Témoignage 1 -->
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <div class="testimonial-initials" style="background-color: #3498db;">
+                                JB
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Joel Bah</h5>
+                                <small class="text-primary">Étudiant 2022-2023</small>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="mb-0">"J'ai eu l'immense privilège d'étudier au Groupe Académie Le Succès entre 2022 et 2023. Ce fut bien plus qu'une simple année scolaire. C'est ici que j'ai découvert ma passion pour l'histoire grâce à Monsieur Degnadji J Jacques, un enseignant exceptionnel dont la manière vivante de transmettre le savoir a éveillé en moi une flamme qui ne s'est jamais éteinte. Aujourd'hui antiquisant, je me perds avec bonheur dans les civilisations anciennes, en grande partie grâce à lui."</p>
+                    </div>
+                </div>
+                
+                <!-- Témoignage 2 -->
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <div class="testimonial-initials" style="background-color: #e74c3c;">
+                                NB
+                            </div>
+                            <div>
+                                <h5 class="mb-0">NaThy Bamba</h5>
+                                <small class="text-primary">Bachelière 2025</small>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <p class="mb-0">"L'an passé, j'ai obtenu mon baccalauréat grâce au soutien personnalisé du Groupe Académie Le Succès. Les enseignants m'ont accompagnée avec bienveillance tout au long de l'année, m'aidant à surmonter mes difficultés en mathématiques et en philosophie. Leur méthodologie et leur disponibilité ont fait toute la différence dans ma réussite. Je recommande vivement cette académie à tous les élèves souhaitant progresser et obtenir leur diplôme."</p>
+                    </div>
+                </div>
+                
+                <!-- Témoignage 3 (Nouveau) -->
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <div class="testimonial-initials" style="background-color: #2ecc71;">
+                                AK
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Say Say Jean-Marc Ézéchiel</h5>
+                                <small class="text-primary"> Bachelier 2025</small>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="mb-0">"Grâce à la préparation intensive du Groupe Académie Le Succès, j'ai réussi le concours au Bac. Le programme de prépa-bac était extrêmement bien structuré, avec des simulations d'examens régulières qui m'ont permis d'être parfaitement préparé. Les enseignants sont dévoués et disponibles, même en dehors des heures de cours. Je suis infiniment reconnaissant pour leur accompagnement qui a été déterminant dans ma réussite."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Deuxième ligne de témoignages -->
+            <div class="row mt-4">
+                <!-- Témoignage 4 (Nouveau) -->
+                <div class="col-lg-6 col-md-6 mb-4 animate-on-scroll">
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <div class="testimonial-initials" style="background-color: #9b59b6;">
+                                MS
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Diabate Mohamed</h5>
+                                <small class="text-primary">Bachelier 2025</small>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="mb-0">"En tant qu'élève,Les cours de perfectionnement m'ont permis non seulement de combler mes lacunes, mais aussi de développer une véritable méthodologie de travail. Aujourd'hui, j'aborde les dissertations avec confiance et j'ai considérablement amélioré mes notes. Merci à toute l'équipe pour son professionnalisme et sa patience!"</p>
+                    </div>
+                </div>
+                
+                <!-- Témoignage 5 (Nouveau) -->
+                <div class="col-lg-6 col-md-6 mb-4 animate-on-scroll">
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <div class="testimonial-initials" style="background-color: #f39c12;">
+                                KD
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Oussou Ferrera</h5>
+                                <small class="text-primary">Bachelier 2025</small>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="mb-0">"En tant que parent, je tiens à exprimer ma satisfaction quant à l'accompagnement que mon fils a reçu au Groupe Académie Le Succès. Non seulement ses résultats scolaires se sont nettement améliorés, mais il a également développé une autonomie dans son travail et une confiance en lui remarquable. La communication avec l'équipe pédagogique est excellente et les progrès sont régulièrement partagés. Je recommande vivement cette structure à tous les parents soucieux de la réussite de leurs enfants."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- Section 5 - Contact -->
     <section class="contact-section" id="section_5">
@@ -104,13 +1148,20 @@
                             </div>
                             <button type="submit" class="btn btn-custom w-100">Envoyer la demande</button>
                         </form>
-formMessage" class="mt-3 text-center"></div>
+                        <div id="formMessage" class="mt-3 text-center"></div>
                     </div>
                 </div>
                 
                 <div class="col-lg-6 animate-on-scroll">
                     <div class="contact-info">
-                        <h3 class="mb-4
+                        <h3 class="mb-4">Informations de contact</h3>
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="bi bi-geo-alt fs-4 me-3"></i>
+                            <div>
+                                <h5>Adresse</h5>
+                                <p>PORT-BOUET GONZAGUE, TERRE ROUGE<br>
+                                <small>Près de la boulangerie Paris Baguette</small></p>
+                            </div>
                         </div>
                         <div class="d-flex align-items-start mb-4">
                             <i class="bi bi-telephone fs-4 me-3"></i>
@@ -132,22 +1183,13 @@ formMessage" class="mt-3 text-center"></div>
                                 <h5>Horaires d'ouverture</h5>
                                 <p>Lundi-Samedi : 08h-20h<br>
                                 Dimanche : 14h-16h</p>
-                                
-                                
                             </div>
-                        </div>
-                        
-                        <div class="mt-5">
-                    </div>
-                    
-                    
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
     
     <!-- Footer -->
     <footer class="footer">
@@ -156,7 +1198,7 @@ formMessage" class="mt-3 text-center"></div>
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <a class="navbar-brand text-white" href="#">
                         <i class="bi bi-book me-2"></i>
-                        <span>Groupe Academic Le Succès</span>
+                        <span>Groupe Académie Le Succès</span>
                     </a>
                     <p class="mt-3">Depuis 15 ans, nous accompagnons les étudiants vers l'excellence scolaire et la réussite aux examens.</p>
                 </div>
@@ -164,8 +1206,7 @@ formMessage" class="mt-3 text-center"></div>
                 <div class="col-lg-6 text-lg-end">
                     <div class="social-icons">
                         <a href="https://www.facebook.com/share/16H9umCKXa/" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-                        
-                        <a href="https://wa.me/2250102400452" class="text-white"><i class="bi bi-WhatsApp"></i></a>
+                        <a href="https://wa.me/2250102400452" class="text-white"><i class="bi bi-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -174,24 +1215,16 @@ formMessage" class="mt-3 text-center"></div>
             
             <div class="row">
                 <div class="col-md-6">
-                    <p class="mb-0">© 2025 Groupe Academic Le Succès. Tous droits réservés by</p>
+                    <p class="mb-0">© 2025 Groupe Académie Le Succès. Tous droits réservés</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <a href="https://hackhenaton-tech.github.io/Hackhenaton-tech/" class="text-white me-3">Hackhenaton Tech</a>
-                <div class="col-md-6 text-md-end">
                     <a href="#" class="text-white me-3">Mentions légales</a>
                     <a href="#" class="text-white">Politique de confidentialité</a>
                 </div>
             </div>
         </div>
     </footer>
-                      </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Le reste des sections (enseignants, témoignages, contact) suivrait avec les mêmes améliorations -->
     
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -303,4 +1336,4 @@ formMessage" class="mt-3 text-center"></div>
         });
     </script>
 </body>
-        </html>
+</html>
