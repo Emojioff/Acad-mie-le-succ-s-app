@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord Élève - Cours Privés le Succès</title>
+    
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        :root {
+            --primary: #2c5aa0;
+            --secondary: #d4af37;
+            --accent: #1a936f;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #3498db;
+        }
+        
+        body {
+            font-family: 'Unbounded', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark);
+            min-height: 100vh;
+        }
+        
+        .dashboard-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #3a70c4 100%);
+            color: white;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .user-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .dashboard-nav {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+        
+        .nav-pills .nav-link {
+            color: var(--dark);
+            font-weight: 600;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .nav-pills .nav-link.active {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+        }
+        
+        .nav-pills .nav-link:hover:not(.active) {
+            background: rgba(44, 90, 160, 0.1);
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+            height: 100%;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .course-header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 15px;
+            font-weight: 700;
+        }
+        
+        .course-body {
+            padding: 20px;
+        }
+        
+        .progress {
+            height: 8px;
+            margin: 15px 0;
+        }
+        
+        .course-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .stats-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+        
+        .recent-activity {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(44, 90, 160, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+        }
+        
+        .btn-dashboard {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
+        }
+        
+        .btn-dashboard:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(44, 90, 160, 0.4);
+            color: white;
+        }
+        
+        .badge-level {
+            background: var(--secondary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .search-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .search-box input {
+            padding-left: 40px;
+            border-radius: 50px;
+            border: 2px solid #e9ecef;
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 12px;
+            color: #6c757d;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .filter-btn {
+            background: white;
+            border: 2px solid #e9ecef;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .back-to-home {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .back-to-home:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .user-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .dashboard-header {
+                padding: 20px 0;
+            }
+            
+            .stats-number {
+                font-size: 2rem;
+            }
+            
+            .filter-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bouton de retour à l'accueil -->
+    <a href="index.html" class="back-to-home" title="Retour à l'accueil">
+        <i class="bi bi-house"></i>
+    </a>
+    
+    <!-- En-tête du tableau de bord -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <i class="bi bi-person"></i>
+                        </div>
+                        <div>
+                            <h1>Tableau de Bord Élève</h1>
+                            <p>Bienvenue dans votre espace personnel d'apprentissage</p>
+                        </div>
+                    </div>
+                </div>
+        
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Navigation par niveau -->
+        <div class="dashboard-nav">
+            <ul class="nav nav-pills justify-content-center" id="levelTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all" type="button" role="tab">Tous les niveaux</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="sixth-tab" data-bs-toggle="pill" data-bs-target="#sixth" type="button" role="tab">6ème</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="fifth-tab" data-bs-toggle="pill" data-bs-target="#fifth" type="button" role="tab">5ème</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="fourth-tab" data-bs-toggle="pill" data-bs-target="#fourth" type="button" role="tab">4ème</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="third-tab" data-bs-toggle="pill" data-bs-target="#third" type="button" role="tab">3ème</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="second-tab" data-bs-toggle="pill" data-bs-target="#second" type="button" role="tab">Seconde</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="first-tab" data-bs-toggle="pill" data-bs-target="#first" type="button" role="tab">Première</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="final-tab" data-bs-toggle="pill" data-bs-target="#final" type="button" role="tab">Terminale</button>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Statistiques rapides -->
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="stats-card">
+                    <i class="bi bi-journal-bookmark course-icon"></i>
+                    <div class="stats-number">12</div>
+                    <p>Cours suivis</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stats-card">
+                    <i class="bi bi-check-circle course-icon"></i>
+                    <div class="stats-number">8</div>
+                    <p>Cours terminés</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stats-card">
+                    <i class="bi bi-award course-icon"></i>
+                    <div class="stats-number">85%</div>
+                    <p>Moyenne générale</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stats-card">
+                    <i class="bi bi-clock course-icon"></i>
+                    <div class="stats-number">24h</div>
+                    <p>Temps d'étude cette semaine</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Barre de recherche et filtres -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" class="form-control" placeholder="Rechercher un cours, une matière...">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="filter-buttons">
+                    <button class="filter-btn active">Tous</button>
+                    <button class="filter-btn">En cours</button>
+                    <button class="filter-btn">Terminés</button>
+                    <button class="filter-btn">À venir</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contenu des onglets -->
+        <div class="tab-content" id="levelTabsContent">
+            <!-- Onglet Tous les niveaux -->
+            <div class="tab-pane fade show active" id="all" role="tabpanel">
+                <div class="row">
+                    <!-- Cours de 6ème -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <div class="course-header">
+                                Mathématiques - 6ème
+                                <span class="badge-level float-end">6ème</span>
+                            </div>
+                            <div class="course-body">
+                                <i class="bi bi-calculator course-icon"></i>
+                                <p>Découverte des nombres entiers, des opérations de base et introduction à la géométrie.</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Progression: 75%</p>
+                                <a href="#" class="btn btn-dashboard w-100">Continuer</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cours de 5ème -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <div class="course-header">
+                                Français - 5ème
+                                <span class="badge-level float-end">5ème</span>
+                            </div>
+                            <div class="course-body">
+                                <i class="bi bi-book course-icon"></i>
+                                <p>Étude de la grammaire, conjugaison, et découverte de la littérature jeunesse.</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Progression: 60%</p>
+                                <a href="#" class="btn btn-dashboard w-100">Continuer</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cours de 4ème -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <div class="course-header">
+                                Sciences Physiques - 4ème
+                                <span class="badge-level float-end">4ème</span>
+                            </div>
+                            <div class="course-body">
+                                <i class="bi bi-egg-fried course-icon"></i>
+                                <p>Introduction à la chimie et à la physique avec des expériences pratiques.</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Progression: 40%</p>
+                                <a href="#" class="btn btn-dashboard w-100">Continuer</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cours de 3ème -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <div class="course-header">
+                                Préparation BEPC - 3ème
+                                <span class="badge-level float-end">3ème</span>
+                            </div>
+                            <div class="course-body">
+                                <i class="bi bi-mortarboard course-icon"></i>
+                                <p>Révision intensive pour le Brevet avec examens blancs et corrections personnalisées.</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Progression: 90%</p>
+                                <a href="#" class="btn btn-dashboard w-100">Continuer</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cours de Seconde -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <div class="course-header">
+                                Mathématiques - Seconde
+                                <span class="badge-level float-end">Seconde</span>
+                            </div>
+                            <div class="course-body">
+                                <i class="bi bi-graph-up course-icon"></i>
+                                <p>Algèbre, géométrie analytique et initiation aux fonctions mathématiques.</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Progression: 30%</p>
+                                <a href="#" class="btn btn-dashboard w-100">Continuer</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cours de Première -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <div class="course-header">
+                                Philosophie - Première
+                                <span class="badge-level float-end">Première</span>
+                            </div>
+                            <div class="course-body">
+                                <i class="bi bi-lightbulb course-icon"></i>
+                                <p>Introduction à la philosophie, notions fondamentales et méthodologie de la dissertation.</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Progression: 20%</p>
+                                <a href="#" class="btn btn-dashboard w-100">Commencer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Onglets pour chaque niveau (similaire à la structure ci-dessus) -->
+            <!-- Pour des raisons de longueur, je ne montre qu'un onglet, mais les autres suivent le même modèle -->
+            <div class="tab-pane fade" id="sixth" role="tabpanel">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <div class="course-header">
+                                Mathématiques - 6ème
+                                <span class="badge-level float-end">6ème</span>
+                            </div>
+                            <div class="course-body">
+                                <i class="bi bi-calculator course-icon"></i>
+                                <p>Découverte des nombres entiers, des opérations de base et introduction à la géométrie.</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Progression: 75%</p>
+                                <a href="#" class="btn btn-dashboard w-100">Continuer</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <div class="course-header">
+                                Français - 6ème
+                                <span class="badge-level float-end">6ème</span>
+                            </div>
+                            <div class="course-body">
+                                <i class="bi bi-book course-icon"></i>
+                                <p>Grammaire, orthographe, conjugaison et lecture de textes simples.</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Progression: 60%</p>
+                                <a href="#" class="btn btn-dashboard w-100">Continuer</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="course-card">
+                            <div class="course-header">
+                                Histoire-Géographie - 6ème
+                                <span class="badge-level float-end">6ème</span>
+                            </div>
+                            <div class="course-body">
+                                <i class="bi bi-globe course-icon"></i>
+                                <p>Découverte des grandes civilisations anciennes et initiation à la géographie.</p>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p>Progression: 45%</p>
+                                <a href="#" class="btn btn-dashboard w-100">Continuer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Les autres onglets (5ème, 4ème, etc.) suivent le même modèle -->
+        </div>
+        
+        <!-- Activité récente -->
+        <div class="row mt-5">
+            <div class="col-lg-8">
+                <div class="recent-activity">
+                    <h4>Activité récente</h4>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="bi bi-check-circle"></i>
+                        </div>
+                        <div>
+                            <h6>Quiz de Mathématiques terminé</h6>
+                            <p>Score: 18/20 - Il y a 2 heures</p>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="bi bi-play-circle"></i>
+                        </div>
+                        <div>
+                            <h6>Vidéo sur la colonisation</h6>
+                            <p>Histoire - Il y a 5 heures</p>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="bi bi-file-text"></i>
+                        </div>
+                        <div>
+                            <h6>Devoir de Français</h6>
+                            <p>Note: 16/20 - Il y a 1 jour</p>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <div>
+                            <h6>Badge "Expert en Grammaire" débloqué</h6>
+                            <p>Français - Il y a 2 jours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="stats-card">
+                    <h4>Prochain examen</h4>
+                    <i class="bi bi-calendar-check course-icon"></i>
+                    <h5>Bac Blanc - Mathématiques</h5>
+                    <p>15 décembre 2025</p>
+                    <div class="countdown mt-3">
+                        <div class="row text-center">
+                            <div class="col-3">
+                                <div class="countdown-number">12</div>
+                                <small>Jours</small>
+                            </div>
+                            <div class="col-3">
+                                <div class="countdown-number">08</div>
+                                <small>Heures</small>
+                            </div>
+                            <div class="col-3">
+                                <div class="countdown-number">45</div>
+                                <small>Min</small>
+                            </div>
+                            <div class="col-3">
+                                <div class="countdown-number">22</div>
+                                <small>Sec</small>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-dashboard mt-3 w-100">Réviser</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fonctionnalité de recherche
+        document.querySelector('.search-box input').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const courseCards = document.querySelectorAll('.course-card');
+            
+            courseCards.forEach(card => {
+                const title = card.querySelector('.course-header').textContent.toLowerCase();
+                const description = card.querySelector('.course-body p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+        
+        // Fonctionnalité des filtres
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Retirer la classe active de tous les boutons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Ajouter la classe active au bouton cliqué
+                this.classList.add('active');
+                
+                // Ici, vous pouvez ajouter la logique pour filtrer les cours
+                // en fonction du statut (en cours, terminés, à venir)
+            });
+        });
+        
+        // Animation des cartes au défilement
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.course-card, .stats-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animateElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s, transform 0.5s';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
